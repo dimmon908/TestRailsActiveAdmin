@@ -1,0 +1,29 @@
+<h1>Listing product_photos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product</th>
+      <th>Photo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @product_photos.each do |product_photo| %>
+      <tr>
+        <td><%= product_photo.product_id %></td>
+        <td><%= product_photo.photo %></td>
+        <td><%= link_to 'Show', product_photo %></td>
+        <td><%= link_to 'Edit', edit_product_photo_path(product_photo) %></td>
+        <td><%= link_to 'Destroy', product_photo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Product photo', new_product_photo_path %>
