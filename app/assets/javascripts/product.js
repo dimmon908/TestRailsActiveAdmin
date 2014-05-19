@@ -15,7 +15,7 @@
 })(jQuery, window);
 
 (function(){
-
+  var PHOTO_LIMIT = 8;
   var photoCount;
 
   function readURL(input) {
@@ -28,6 +28,9 @@
 
       reader.readAsDataURL(input.files[0]);
     }
+  }
+  function isEnoughtPhoto() {
+    return photoCount >= PHOTO_LIMIT;
   }
 
   $(document).on('change', 'input[type="file"]', function () {
@@ -53,6 +56,17 @@
   });
 
   $(document).ready(function() {
-    photoCount = $('')
+    photoCount = $('.product_photos img').length;
+    var productPhotosBtn = $('.product_photos .button.has_many_add');
+    if (isEnoughtPhoto()) {
+      productPhotosBtn.hide();
+    }
+    if (productPhotosBtn.length > 0) {
+      productPhotosBtn.click(function() {
+        photoCount = photoCount+1;
+        if (isEnoughtPhoto())
+          productPhotosBtn.hide();
+      });
+    }
   });
 })();
