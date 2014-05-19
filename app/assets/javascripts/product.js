@@ -51,9 +51,6 @@
       }
     })
   });
-  $(document).on('click', 'a.button.has_many_add', function() {
-
-  });
 
   $(document).ready(function() {
     photoCount = $('.product_photos img').length;
