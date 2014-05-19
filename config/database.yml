@@ -1,26 +1,17 @@
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: TestRails_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  timeout: 5000
 
 test:
-  adapter: mysql2
-  encoding: utf8
-  database: TestRails_test
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  timeout: 5000
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  database: TestRails_production
+  adapter: sqlite3
+  database: db/production.sqlite3
   pool: 5
-  username: root
-  password: root
-  host: localhost
+  timeout: 5000
